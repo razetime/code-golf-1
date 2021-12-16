@@ -7,7 +7,7 @@ import (
 
 func pangramGrep() (args []string, out string) {
 	// They all start lowercase and valid.
-	pangrams := [][]byte{
+	pangrams := shuffle([][]byte{
 		[]byte("6>_4\"gv9lb?2!ic7}=-m'fd30ph].o%@w+[8unk&t1es<az(x;${^y#)q,rj\\5/*:"),
 		[]byte(`a large fawn jumped quickly over white zinc boxes.`),
 		[]byte(`all questions asked by five watched experts amaze the judge.`),
@@ -33,10 +33,6 @@ func pangramGrep() (args []string, out string) {
 		[]byte(`the quick brown fox jumps over the lazy dog.`),
 		[]byte(`the wizard quickly jinxed the gnomes before they vaporized.`),
 		[]byte(`when zombies arrive, quickly fax judge pat.`),
-	}
-
-	rand.Shuffle(len(pangrams), func(i, j int) {
-		pangrams[i], pangrams[j] = pangrams[j], pangrams[i]
 	})
 
 	for i, pangram := range pangrams {
