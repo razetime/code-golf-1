@@ -486,6 +486,25 @@ for i = 1, #arg do
 end
 '''
 
+[Nial]
+size    = '1.21 MiB'
+version = 'e55dc0a'
+website = 'https://nial-array-language.org'
+example = '''
+% Printing ;
+write 'Hello, World!';
+
+% Looping ;
+FOR i WITH (tell 10) DO
+    write i;
+ENDFOR
+
+% Accessing arguments ;
+FOR arg WITH sys_argv DO
+    write arg;
+ENDFOR
+'''
+
 [Nim]
 size    = '13.2 MiB'
 version = '1.6.2'
